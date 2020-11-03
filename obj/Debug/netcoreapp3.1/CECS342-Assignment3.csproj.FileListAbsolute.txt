@@ -11,3 +11,16 @@ D:\017350864\Documents\CSULB\Fall-2020\CECS-342\Assignment03\CECS342-Assignment3
 D:\017350864\Documents\CSULB\Fall-2020\CECS-342\Assignment03\CECS342-Assignment3\obj\Debug\netcoreapp3.1\CECS342-Assignment3.dll
 D:\017350864\Documents\CSULB\Fall-2020\CECS-342\Assignment03\CECS342-Assignment3\obj\Debug\netcoreapp3.1\CECS342-Assignment3.pdb
 D:\017350864\Documents\CSULB\Fall-2020\CECS-342\Assignment03\CECS342-Assignment3\obj\Debug\netcoreapp3.1\CECS342-Assignment3.genruntimeconfig.cache
+C:\Users\Duy\Desktop\cecs342Assignments\bin\Debug\netcoreapp3.1\CECS342-Assignment3.exe
+C:\Users\Duy\Desktop\cecs342Assignments\bin\Debug\netcoreapp3.1\CECS342-Assignment3.deps.json
+C:\Users\Duy\Desktop\cecs342Assignments\bin\Debug\netcoreapp3.1\CECS342-Assignment3.runtimeconfig.json
+C:\Users\Duy\Desktop\cecs342Assignments\bin\Debug\netcoreapp3.1\CECS342-Assignment3.runtimeconfig.dev.json
+C:\Users\Duy\Desktop\cecs342Assignments\bin\Debug\netcoreapp3.1\CECS342-Assignment3.dll
+C:\Users\Duy\Desktop\cecs342Assignments\bin\Debug\netcoreapp3.1\CECS342-Assignment3.pdb
+C:\Users\Duy\Desktop\cecs342Assignments\obj\Debug\netcoreapp3.1\CECS342-Assignment3.csprojAssemblyReference.cache
+C:\Users\Duy\Desktop\cecs342Assignments\obj\Debug\netcoreapp3.1\CECS342-Assignment3.AssemblyInfoInputs.cache
+C:\Users\Duy\Desktop\cecs342Assignments\obj\Debug\netcoreapp3.1\CECS342-Assignment3.AssemblyInfo.cs
+C:\Users\Duy\Desktop\cecs342Assignments\obj\Debug\netcoreapp3.1\CECS342-Assignment3.csproj.CoreCompileInputs.cache
+C:\Users\Duy\Desktop\cecs342Assignments\obj\Debug\netcoreapp3.1\CECS342-Assignment3.dll
+C:\Users\Duy\Desktop\cecs342Assignments\obj\Debug\netcoreapp3.1\CECS342-Assignment3.pdb
+C:\Users\Duy\Desktop\cecs342Assignments\obj\Debug\netcoreapp3.1\CECS342-Assignment3.genruntimeconfig.cache
