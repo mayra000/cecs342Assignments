@@ -13,21 +13,23 @@ namespace CECS342_Assignment3
 
             IEnumerable<string> allFiles = Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories); //return IEnumerable<string> 
             
-            foreach (string file in allFiles) yield return file;
+            foreach (string file in allFiles) { //iterate through the files
+                yield return file; //process one file at a time
+            }
         }
 
         static string FormatByteSize(long byteSize) {
 
-            string[] unit = {"B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB"};
-            double formatSize = (double) byteSize;
-            int temp = 0;
+            string[] unit = {"B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB"}; //size unit list 
+            double formatSize = (double) byteSize; //cast to double for decimal places
+            int temp = 0; //index denoting current unit
 
-            while (formatSize >= 1024.0 && temp < unit.Length) {
-                formatSize /= 1024.0;
-                temp++;
+            while (formatSize >= 1024.0 && temp < unit.Length) { //loop while size can be converted >= 1.00 of the next unit
+                formatSize /= 1024.0; //divide float value for next unit value
+                temp++; //increment unit index
             }
 
-            return Math.Round(formatSize, 2).ToString() + " " + unit[temp];
+            return formatSize.ToString("0.00") + " " + unit[temp]; //fix with 2 digits and return as string
         }
 
         static XDocument CreateReport(IEnumerable<string> files) {
@@ -70,9 +72,9 @@ namespace CECS342_Assignment3
 
         static void Main(string[] args) {
             Console.WriteLine("Starting...");
-            var allFiles = EnumerateFilesRecursively(args[0]);
+            var allFiles = EnumerateFilesRecursively(args[0]); //iterate through files within folder, location stated in first argument
             XDocument report = CreateReport(allFiles);
-            report.Save(args[1]);
+            report.Save(args[1]); //save output as html file, location stated in second argument
             Console.WriteLine("Report Created!");
         }
     }
