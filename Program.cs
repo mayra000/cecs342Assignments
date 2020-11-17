@@ -76,6 +76,7 @@ namespace CECS342_Assignment3
             XDocument report = CreateReport(allFiles);
             report.Save(args[1]); //save output as html file, location stated in second argument
             Console.WriteLine("Report Created!");
+            //Console.WriteLine(String.Join(", ", allFiles.Select(n => n.ToString()).ToArray()));
         }
     }
 }
