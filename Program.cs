@@ -8,39 +8,48 @@ namespace CECS342_Assignment3
 {
     class Program
     {
-
+        // recursively enumerate all files in the given folder (including the enrire sub-folder hierarchy)
         static IEnumerable<string> EnumerateFilesRecursively(string path) {
-
-            IEnumerable<string> allFiles = Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories); //return IEnumerable<string> 
+            // return IEnumerable<string> 
+            IEnumerable<string> allFiles = Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories); 
             
-            foreach (string file in allFiles) { //iterate through the files
-                yield return file; //process one file at a time
+            // iterate through the files
+            foreach (string file in allFiles) { 
+                // process one file at a time
+                yield return file; 
             }
         }
 
+        // format a byte size in human readble form
         static string FormatByteSize(long byteSize) {
+            // a string array of size units
+            string[] unit = {"B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB"};
+            // cast to double for decimal places
+            double formatSize = (double) byteSize; 
+            // index denoting current unit
+            int temp = 0; 
 
-            string[] unit = {"B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB"}; //size unit list 
-            double formatSize = (double) byteSize; //cast to double for decimal places
-            int temp = 0; //index denoting current unit
-
-            while (formatSize >= 1024.0 && temp < unit.Length) { //loop while size can be converted >= 1.00 of the next unit
-                formatSize /= 1024.0; //divide float value for next unit value
-                temp++; //increment unit index
+            // loop while size can be converted >= 1.00 of the next unit
+            while (formatSize >= 1024.0 && temp < unit.Length) {
+                // divide float value for next unit value
+                formatSize /= 1024.0; 
+                // increment unit index
+                temp++; 
             }
-
-            return formatSize.ToString("0.00") + " " + unit[temp]; //fix with 2 digits and return as string
+            
+            // return the size as a string with 2 digits along with its unit
+            return formatSize.ToString("0.00") + " " + unit[temp]; 
         }
 
+        // create a HTML report with type, count and size for each file type
         static XDocument CreateReport(IEnumerable<string> files) {
-
-            //GroupBy file extenstion out IEnumerable object with type, count, and size field sort by size descending
+            // GroupBy file extenstion out IEnumerable object with type, count, and size field sort by size descending
             var fileType = files.GroupBy(f => Path.GetExtension(f)).Select(
                 g => new { type = g.Key, count = g.Count(), 
                     size = FormatByteSize(g.Sum(x => new FileInfo(x).Length)) })
                     .OrderByDescending(o => o.size);
 
-            //functional way of generating xDocument
+            // functional way of generating xDocument
             return new XDocument(
                 new XDocumentType("html", null, null, null),
                 new XElement("html",
@@ -72,9 +81,16 @@ namespace CECS342_Assignment3
 
         static void Main(string[] args) {
             Console.WriteLine("Starting...");
-            var allFiles = EnumerateFilesRecursively(args[0]); //iterate through files within folder, location stated in first argument
+            
+            // iterate through files within folder, location stated in first argument
+            var allFiles = EnumerateFilesRecursively(args[0]); 
+            
+            // create a report for all files within the folder
             XDocument report = CreateReport(allFiles);
-            report.Save(args[1]); //save output as html file, location stated in second argument
+            
+            // save output as html report file, location stated in second argument
+            report.Save(args[1]); 
+            
             Console.WriteLine("Report Created!");
         }
     }
