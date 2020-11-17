@@ -45,9 +45,7 @@ namespace CECS342_Assignment3
         static XDocument CreateReport(IEnumerable<string> files) {
             // GroupBy file extenstion out IEnumerable object with type, count, and size field sort by size descending
             var fileType = files.GroupBy(f => Path.GetExtension(f)).Select(
-                g => new { type = g.Key, count = g.Count(), 
-                    size = FormatByteSize(g.Sum(x => new FileInfo(x).Length)) })
-                    .OrderByDescending(o => o.size);
+                g => new { type = g.Key, count = g.Count(), size = g.Sum(x => new FileInfo(x).Length) }).OrderByDescending(o => o.size);
 
             // functional way of generating xDocument
             return new XDocument(
@@ -58,7 +56,8 @@ namespace CECS342_Assignment3
                     new XElement("meta",
                     new XAttribute("charset", "utf-8")
                     ),
-                    new XElement("style", "table, th, td {border: 1px solid black; border-collapse: collapse;} th, td {padding: 5px; text-align: left;}table{width:50%;}")
+                    new XElement("style", "table, th, td {border: 1px solid black; border-collapse: collapse;} th, " +
+                        "td {padding: 5px; text-align: left;}table{width:50%; margin-left:auto;margin-right:auto}tr:nth-child(even){background-color:#f2f2f2;}")
                     ),
                 new XElement("body",
                     new XElement("table",
@@ -71,7 +70,7 @@ namespace CECS342_Assignment3
                     select new XElement("tr",
                         new XElement("td", file.type),
                         new XElement("td", file.count.ToString()),
-                        new XElement("td", file.size)
+                        new XElement("td", FormatByteSize(file.size))
                     )
                     )
                 )
