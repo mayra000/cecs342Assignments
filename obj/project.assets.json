@@ -1,26 +1,35 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {},
+    ".NETCoreApp,Version=v3.1/win": {},
+    ".NETCoreApp,Version=v3.1/win-x64": {},
+    ".NETCoreApp,Version=v3.1/win-x86": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Microsoft.NETCore.App >= 3.1.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\Duy\\.nuget\\packages\\": {}
+    "/Users/hoantk2612/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Duy\\Desktop\\cecs342Assignments\\CECS342-Assignment3.csproj",
+      "projectUniqueName": "/Users/hoantk2612/Documents/Classes/CS 342/cecs342Assignments/CECS342-Assignment3.csproj",
       "projectName": "CECS342-Assignment3",
-      "projectPath": "C:\\Users\\Duy\\Desktop\\cecs342Assignments\\CECS342-Assignment3.csproj",
-      "packagesPath": "C:\\Users\\Duy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Duy\\Desktop\\cecs342Assignments\\obj\\",
+      "projectPath": "/Users/hoantk2612/Documents/Classes/CS 342/cecs342Assignments/CECS342-Assignment3.csproj",
+      "packagesPath": "/Users/hoantk2612/.nuget/packages/",
+      "outputPath": "/Users/hoantk2612/Documents/Classes/CS 342/cecs342Assignments/obj",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Duy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/hoantk2612/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -41,23 +50,45 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
-        ],
-        "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
+        "dependencies": {
           "Microsoft.NETCore.App": {
-            "privateAssets": "all"
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "3.1",
+            "autoReferenced": true
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "imports": [
+          "net461"
+        ],
+        "assetTargetFallback": true,
+        "warn": true
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1102",
+      "level": "Error",
+      "message": "Unable to find package Microsoft.NETCore.App with version (>= 3.1.0)\n  - Found 87 version(s) in nuget.org [ Nearest version: 3.0.0-preview8-28405-07 ]",
+      "libraryId": "Microsoft.NETCore.App",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win",
+        ".NETCoreApp,Version=v3.1/win-x64",
+        ".NETCoreApp,Version=v3.1/win-x86"
+      ]
+    }
+  ]
 }
